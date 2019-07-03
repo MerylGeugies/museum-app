@@ -19,3 +19,7 @@ h1 {
 p{
     font-size: 36px;
 }
+img {
+  width: 100%;
+  height: auto;
+}
