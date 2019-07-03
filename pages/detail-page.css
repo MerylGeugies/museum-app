@@ -20,6 +20,6 @@ p{
     font-size: 36px;
 }
 img {
-  width: 100%;
+  max-width: 50%;
   height: auto;
 }
