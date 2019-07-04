@@ -323,23 +323,64 @@ const data = {
       }
     ]
   }
-  const paintings = data.artObjects
+//   const paintings = data.artObjects
+ 
+// //It should only display paintings with a width bigger than 500     
+//     fuction displayPainting(painting) {
+//         if (painting.webImage.width < 2000 || painting.principalOrFirstMaker === "Gerard van Honthorst"){
+//         return null;
+//         }
+  
+// // gather data
+   
+//     const gallery = document.getElementById('gallery')
+//     const link = "./pages/detail-page.html"
 
-  for (let i=0; 1<paintings.length; i++){
-      console.log(paintings[i])
-      // gather data
-    const painting = paintings[i]
-    const gallery = document.getElementById('gallery')
-    const link = "./pages/detail-page.html"
+// // create elements you need
+//     const img = document.createElement('img')
+//     const a = document.createElement('a')
 
-// create elements you need
-    const img = document.createElement('img')
+// // adjust elements
+//     img.alt = painting.title
+//     img.src = painting.webImage.url
+//     a.href = link
 
-      // adjust elements
-    img.alt = painting.title
-    img.src = painting.webImage.url
-    a.href = link
-      // display the elements
-    gallery.appendChild(img)
-    gallery.appendChild(a)
+// // display the elements
+//     a.appendChild(img)
+//     gallery.appendChild(a)
+//     }  
+
+// for (let i=0; 1<paintings.length; i++){
+//     const currentPainting = paintings[i]
+//     displayPainting(currentPainting[i])
+// }
+
+
+const paintings = data.artObjects
+
+function displayPainting(painting){
+  if (painting.webImage.width < 2000 || painting.principalOrFirstMaker === 'Gerard van Honthorst'){
+    return null;
   }
+  
+  const gallery = document.getElementById('gallery')
+  const link = "./pages/detail-page.html"
+
+  // create elements
+  const img = document.createElement('img')
+  const a = document.createElement('a')
+
+  // adjust elements
+  img.alt = painting.title
+  img.src = painting.webImage.url
+  a.href = link
+
+  // display elements
+  a.appendChild(img)
+  gallery.appendChild(a)
+}
+
+for(let i = 0; i < paintings.length; i++){
+  const currentPainting = paintings[i]
+  displayPainting(currentPainting)
+}
